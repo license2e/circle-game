@@ -110,8 +110,6 @@ var cg = {
    },
    init: function() {
      cg.autosize()
-     this.z = new Image()
-     this.z.src = './logo.png'
 
      this.canvas = $('canvas')
      this.canvas.attr({width: this.config.width, height: this.config.height})
@@ -206,13 +204,6 @@ var cg = {
      this.ctx.font = '20pt Verdana'
      w = this.ctx.measureText(t = '(click to begin)').width
      this.ctx.fillText(t, (this.config.width - w)/2, cg.config.height / 2)
-
-     w = this.ctx.measureText(t = 'created by').width
-     this.ctx.fillText(t, (this.config.width - w)/2, cg.config.height / 2 + 180)
-
-     this.zHeight = 81
-     this.zWidth = 296
-     this.ctx.drawImage(this.z, this.zLogoX = (cg.config.width - this.zWidth) / 2, this.zLogoY = cg.config.height / 2 + 200) //296x81
    }
  }
  var Circle = function(inCenter) {
