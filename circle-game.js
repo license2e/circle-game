@@ -1,4 +1,5 @@
-/* Copyright 2011 Shea Barton
+/* Copyright 2011 Shea Barton 
+ * No unauthorized copying or modification
  */
 var cg = {
   lastTime: (new Date()).getTime(),
@@ -110,7 +111,7 @@ var cg = {
    init: function() {
      cg.autosize()
      this.z = new Image()
-     this.z.src = 'logo.png'
+     this.z.src = './logo.png'
 
      this.canvas = $('canvas')
      this.canvas.attr({width: this.config.width, height: this.config.height})
@@ -132,12 +133,8 @@ var cg = {
      $(this.canvas).mousemove(mm)
 
      $(this.canvas).click(function(e) {
-       if(cg.inZBounds(e.clientX,e.clientY)) {
-         window.open('http://agarioplay.org','_blank')
-       } else {
-         $(cg.canvas).unbind('click')
-         cg.start()
-       }
+       $(cg.canvas).unbind('click')
+        cg.start()
      })
 
      this.tick()
@@ -210,7 +207,7 @@ var cg = {
      w = this.ctx.measureText(t = '(click to begin)').width
      this.ctx.fillText(t, (this.config.width - w)/2, cg.config.height / 2)
 
-     w = this.ctx.measureText(t = 'agariofun.com').width
+     w = this.ctx.measureText(t = 'created by').width
      this.ctx.fillText(t, (this.config.width - w)/2, cg.config.height / 2 + 180)
 
      this.zHeight = 81
@@ -321,6 +318,7 @@ var cg = {
        if(dist < circle.radius + this.radius) {
          if(circle.radius > this.radius) {
            cg.death()
+           break
          } else {
            this.radius++
            cg.circles.splice(i,1)
