@@ -13,7 +13,7 @@ var cg = {
        maxRadius: 55, // or 15 more than player
        playerRadius: 10,
        radiusInterval: 10,
-       speedScale: 2,
+       speedScale: 1,
        colors: ['Blue', 'DeepSkyBlue', 'MediumSlateBlue', 'Aquamarine', 'Lime', 'Indigo', 'Red', 'DarkRed', 'Fuchsia', 'Magenta', 'Orange', 'OrangeRed', 'GreenYellow', 'Purple']
      },
      touchmove: isEventSupported('touchmove')
