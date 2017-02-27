@@ -110,7 +110,7 @@ var cg = {
    init: function() {
      cg.autosize()
      this.z = new Image()
-     this.z.src = 'zazub.png'
+     this.z.src = 'logo.png'
 
      this.canvas = $('canvas')
      this.canvas.attr({width: this.config.width, height: this.config.height})
